@@ -1,9 +1,25 @@
 const express = require('express');
-const data = require('./data');
 const dotenv = require('dotenv');
 dotenv.config();
 
+// Error handling if data file is not found or has issues
+let data;
+try {
+    data = require('./data');
+} catch (error) {
+    console.error('Failed to load data:', error);
+    process.exit(1); // Exit the process if data cannot be loaded
+}
+
 const server = express();
+
+// Optional: Use CORS if needed
+// const cors = require('cors');
+// server.use(cors());
+
+// Optional: Use Helmet for basic security
+// const helmet = require('helmet');
+// server.use(helmet());
 
 // Define the root route
 server.get('/', (req, res) => {
