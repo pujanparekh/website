@@ -14,6 +14,6 @@
     "express": "^4.19.2"
   },
   "devDependencies": {
-    "netlify-cli": "^4.6.10" // Add netlify-cli here if it's a devDependency
+    "netlify-cli": "^4.6.10"
   }
 }
